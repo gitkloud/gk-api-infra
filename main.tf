@@ -8,16 +8,6 @@ resource "aws_s3_bucket" "my_bucket" {
     tags = var.tags
 }
 
-resource "aws_s3_bucket" "my_bucket2" {
-    bucket = "${var.project}-${var.env}-bucket2"
-    acl = "private"
-    versioning {
-        enabled = true
-    }
-
-    tags = var.tags
-}
-
 resource "aws_instance" "my_instance" {
     ami = var.ami
     instance_type = var.instance_type
